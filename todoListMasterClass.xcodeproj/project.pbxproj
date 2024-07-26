@@ -36,6 +36,7 @@
 		EFCED0702C457EEE0004B0A9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCED06F2C457EEE0004B0A9 /* HeaderView.swift */; };
 		EFCED0722C4AC9270004B0A9 /* TLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCED0712C4AC9270004B0A9 /* TLButton.swift */; };
 		EFCED0742C51C7920004B0A9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCED0732C51C7920004B0A9 /* Extensions.swift */; };
+		EFCED0762C51CC3D0004B0A9 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCED0752C51CC3D0004B0A9 /* RegisterViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		EFCED06F2C457EEE0004B0A9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EFCED0712C4AC9270004B0A9 /* TLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLButton.swift; sourceTree = "<group>"; };
 		EFCED0732C51C7920004B0A9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EFCED0752C51CC3D0004B0A9 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				EFCED0692C4568420004B0A9 /* RegisterViewModel.swift */,
 				EFCED06B2C45684C0004B0A9 /* TodoListViewModel.swift */,
 				EFCED06D2C45685D0004B0A9 /* TodoListItemsViewModel.swift */,
+				EFCED0752C51CC3D0004B0A9 /* RegisterViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				EF60C7662C3F5C2A00B2365C /* todoListMasterClassApp.swift in Sources */,
 				EFCED0602C4567F80004B0A9 /* ToDoListItem.swift in Sources */,
 				EF60C7A12C3F649E00B2365C /* NewItemView.swift in Sources */,
+				EFCED0762C51CC3D0004B0A9 /* RegisterViewViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

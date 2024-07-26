@@ -49,7 +49,7 @@ class RegisterViewModel: ObservableObject {
         
         db.collection("users")
             .document(id)
-            .setData(documentData:[String: Any])
+            .setData(newUser.asDictionary())
         
         
     }

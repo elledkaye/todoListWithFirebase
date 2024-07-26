@@ -12,11 +12,34 @@ import SwiftUI
 
 // Login View is
 struct ContentView: View {
-    var body: some View {
-      
-            LoginView()
-        
+    @StateObject var viewModel = ContentViewModel()
     
+    
+    var body: some View {
+        if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty{
+            // if signed in
+            accountView
+        }else{
+            LoginView()
+        }
+    }
+    
+    @ViewBuilder
+    var accountView: some View{
+        TabView{   // Will show a tab bar for each of the views inside of it
+            TodoListView(userId: viewModel.currentUserId)
+                .tabItem {
+                    Label("Home",
+                          systemImage: "house")
+                }
+            
+            ProfileView()
+                .tabItem {
+                    Label("Profile",
+                          systemImage:"person.circle")
+                }
+        }
+        
     }
 }
 
