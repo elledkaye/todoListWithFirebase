@@ -14,21 +14,20 @@ import SwiftUI
 struct LoginView: View {
     
     @StateObject var viewModel = LoginViewModel()
-
+    
     var body: some View {
         NavigationView {
             VStack {
                 // Header
-                HeaderView(title: "To Do List", 
+                HeaderView(title: "To Do List",
                            subtitle: "To get things done",
                            angle: 15,
                            background: Color.pink)
                 
-            
+                
                 
                 // Login Form
                 Form {
-                    
                     if !viewModel.errorMessage.isEmpty{
                         Text(viewModel.errorMessage)
                             .foregroundColor(Color.red)

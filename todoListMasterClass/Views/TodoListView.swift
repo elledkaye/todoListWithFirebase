@@ -9,7 +9,7 @@ import FirebaseFirestoreSwift
 import SwiftUI
 
 struct TodoListView: View {
-    @StateObject var viewModel = TodoListViewModel()
+    @StateObject var viewModel : TodoListViewModel
     // We're going to have a query that will continuously listen for items
     @FirestoreQuery var items: [ToDoListItem]
     
@@ -18,10 +18,12 @@ struct TodoListView: View {
     init(userId: String){
         // users/ <id>/todos/<entiries>
         self._items = FirestoreQuery(
-            collectionPath: "users\(userId)/todos"
-        
+            collectionPath: "users/\(userId)/todos"
         )
-     
+        self._viewModel = StateObject(
+            wrappedValue: TodoListViewModel (userId: userId)
+                        
+        )// What is a wrapped value?
     }
     
     var body: some View {
@@ -29,6 +31,15 @@ struct TodoListView: View {
             VStack{
                 List(items){ item in
                     TodoListItemsView(item: item)
+                        .swipeActions{
+                            Button("Delete"){
+                                // Call delete function from TodoListModel
+                                viewModel.delete(id: item.id)
+                            }
+                            .tint(.red)
+                                
+                            
+                        }// End of .swipeActions
                     
                 }
                 .listStyle(PlainListStyle())

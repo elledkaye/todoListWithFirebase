@@ -17,7 +17,6 @@ struct RegisterView: View {
     
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         VStack{
             // Header
             HeaderView(title: "Register", subtitle: "Start organizing todos", angle: -15, background: Color.orange)
@@ -51,9 +50,7 @@ struct RegisterView: View {
             
             Spacer()
             
-        }
-        
-        
+        }// End of Vstack
         
     } // End of some View
     

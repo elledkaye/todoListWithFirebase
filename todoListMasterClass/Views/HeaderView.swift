@@ -55,6 +55,13 @@ struct HeaderView: View {
         }
         
         
-    }
+    }//remove
+    
+    
+    
     
 }
+#Preview {  HeaderView(title: "Title",
+                       subtitle: "Subtitle",
+                       angle: 15,
+                       background: Color.blue) }

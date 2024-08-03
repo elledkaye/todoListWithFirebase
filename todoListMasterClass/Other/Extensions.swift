@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Encodable{ // What is Encodable?
+extension Encodable{ // What is Encodable? -> (encodes JSON file) way to serialize and (Decodable = Master class)deserialize JSON files
     
     func asDictionary() -> [String: Any]{
         

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TodoListItemsView: View {
+    @StateObject var viewModel = ProfileViewModel()
     let item: ToDoListItem
     
     var body: some View {
@@ -26,10 +27,13 @@ struct TodoListItemsView: View {
             
             Button{
                 
+                viewModel.toggleIsDone(item: item)
+                
                 
             }label:{
-                
+                // Imaahe name if the item is done we are going to show a filled in circle otherwise we are going to show an unfilled ciircle
                 Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                    .foregroundColor(Color.blue)
             }
             
         } // End of Horizontal Stack
