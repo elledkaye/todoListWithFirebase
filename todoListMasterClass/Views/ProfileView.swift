@@ -13,9 +13,64 @@ struct ProfileView: View {
     var body: some View {
         NavigationView{
             VStack{
+                // Avatar
+                Image(systemName: "person.circle")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color.blue)
+                    .frame(width: 125, height: 125)
+                    .padding()
                 
+                // Info: Name, Email, Member  since
+                VStack{
+                    // ProfileName Stack
+                    if let user = viewModel.user{
+                        HStack{
+                            Text("Name: ")
+                                .bold()
+                            Text(user.name)
+                        }
+                        .padding()
+                        // ProfileEmail Stack
+                        HStack{
+                            Text("Email: ")
+                                .bold()
+                            Text(user.email)
+                        }
+                        .padding()
+                        
+                        HStack{
+                            Text("Member Since:")
+                                .bold()
+                            Text("\(Date(timeIntervalSince1970:user.joined).formatted(date:.abbreviated, time: .shortened))")
+                        }
+                        .padding()
+                        
+                        
+                        // SIgn Out
+                        Button("Log Out"){
+                            viewModel.logOut()
+                            
+                        }
+                        .tint(.red)
+                        .padding()
+                        
+                        Spacer()
+                            
+                    } else{
+                        Text("Loading Profile...")
+                    }
+                        
+                    }
+                    
+                  
             } // End of Vstack
             .navigationTitle("Profile") // what are modifiers?
+        }
+        
+        .onAppear{
+            viewModel.fetchUser()
+            
         }
     }
 }
