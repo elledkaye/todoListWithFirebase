@@ -13,7 +13,7 @@ class ContentViewModel: ObservableObject{
     private var handler: AuthStateDidChangeListenerHandle?
     
     init(){
-        
+        // Listener for our Auth state this should update our main view 
         self.handler = Auth.auth().addStateDidChangeListener{ [weak self]_, user in // weak -> memory manageable too (garbage control) a weak reference to that object
             DispatchQueue.main.async{
                 self?.currentUserId = user?.uid ?? ""
